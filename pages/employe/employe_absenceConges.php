@@ -69,15 +69,12 @@
         input[type="date"]::-webkit-calendar-picker-indicator:hover {
             opacity: 1;
         }
-        #request-modal {
-            display: none;
-        }
-        #request-modal.flex {
-            display: flex;
+        [x-cloak] {
+            display: none !important;
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark">
+<body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark" x-data="{ modalOpen: false }" x-cloak>
 <div class="flex min-h-screen">
 <aside class="w-64 bg-accent dark:bg-background-dark border-r border-accent dark:border-secondary/20 flex-shrink-0">
 <div class="flex items-center gap-3 h-16 px-6 border-b border-accent dark:border-secondary/20">
@@ -141,7 +138,7 @@
 </div>
 <p class="text-4xl font-bold text-green-600 dark:text-primary">15</p>
 </div>
-<button class="bg-primary hover:bg-primary/90 text-secondary font-bold py-2 px-4 rounded-lg shadow-soft transition-colors flex items-center justify-center gap-2" id="open-modal-btn" type="button">
+<button @click="modalOpen = true" class="bg-primary hover:bg-primary/90 text-secondary font-bold py-2 px-4 rounded-lg shadow-soft transition-colors flex items-center justify-center gap-2" type="button">
 <span class="material-symbols-outlined">add</span>
 <span>Demander un congé ou une absence</span>
 </button>
@@ -203,11 +200,11 @@
 </main>
 </div>
 </div>
-<div class="fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center" id="request-modal">
-<div class="bg-white dark:bg-background-dark/80 backdrop-blur-lg w-full max-w-lg p-6 rounded-lg shadow-soft m-4">
+<div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center" x-show="modalOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+<div @click.away="modalOpen = false" class="bg-white dark:bg-background-dark/80 backdrop-blur-lg w-full max-w-lg p-6 rounded-lg shadow-soft m-4" x-show="modalOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95">
 <div class="flex justify-between items-center mb-4">
 <h3 class="text-xl font-bold font-display text-text-light dark:text-text-dark">Nouvelle Demande</h3>
-<button class="text-text-muted-light dark:text-text-muted-dark hover:text-text-light dark:hover:text-text-dark" id="close-modal-btn">
+<button @click="modalOpen = false" class="text-text-muted-light dark:text-text-muted-dark hover:text-text-light dark:hover:text-text-dark">
 <span class="material-symbols-outlined">close</span>
 </button>
 </div>
@@ -235,22 +232,6 @@
 </form>
 </div>
 </div>
-<script>
-    const openModalBtn = document.getElementById('open-modal-btn');
-    const closeModalBtn = document.getElementById('close-modal-btn');
-    const modal = document.getElementById('request-modal');
-    openModalBtn.addEventListener('click', () => {
-        modal.classList.add('flex');
-    });
-    closeModalBtn.addEventListener('click', () => {
-        modal.classList.remove('flex');
-    });
-    // Close modal if clicking outside of it
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('flex');
-        }
-    });
-</script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 </body></html>
