@@ -1,5 +1,5 @@
 <?php
-// Définir un titre par défaut si la variable n'est pas passée
+// Définit un titre par défaut si la variable n'est pas déjà définie sur la page appelante.
 $pageTitle = isset($pageTitle) ? $pageTitle : "Greentsika HR Management";
 ?>
 <!DOCTYPE html>
@@ -37,7 +37,7 @@ $pageTitle = isset($pageTitle) ? $pageTitle : "Greentsika HR Management";
         }
     </script>
     <style>
-        /* Vous pouvez garder ici les styles globaux comme .status-badge, etc. */
+        /* Styles globaux qui peuvent être utiles sur plusieurs pages */
         [x-cloak] { display: none !important; }
     </style>
 </head>
