@@ -1,6 +1,11 @@
 <?php
 $pageTitle = "Greentsika HR Management - Mon Profil";
 $activePage = "profil";
+
+// Simulation du statut du profil. Dans une application réelle, cette valeur viendrait de la base de données.
+// Mettez cette variable à `true` pour simuler un profil complet.
+$isProfileComplete = false; 
+
 include '../../templates/header.php';
 ?>
 
@@ -15,13 +20,20 @@ include '../../templates/header.php';
 </div>
 </div>
 </header>
-<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8" x-data="{ modalOpen: false, documentUrl: '' }">
 <div class="max-w-4xl mx-auto">
+<?php if (!$isProfileComplete): ?>
+<div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded-lg mb-8 shadow-soft" role="alert">
+<p class="font-bold">Profil en attente de validation</p>
+<p>Votre profil doit être complété et validé par un administrateur. Certaines fonctionnalités comme le pointage et la gestion des congés sont désactivées en attendant.</p>
+</div>
+<?php endif; ?>
+
 <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
 <h2 class="text-3xl font-bold font-display text-text-light dark:text-text-dark">Mon Profil</h2>
-<div class="status-badge status-pending">
-<span>🟡</span> En attente
-            </div>
+<div class="status-badge <?php echo $isProfileComplete ? 'status-approved' : 'status-pending'; ?>">
+<span><?php echo $isProfileComplete ? '🟢' : '🟡'; ?></span> <?php echo $isProfileComplete ? 'Validé' : 'En attente'; ?>
+</div>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 <div class="lg:col-span-1">
@@ -39,12 +51,36 @@ include '../../templates/header.php';
 <div>
 <h3 class="text-lg font-semibold font-display mb-2 text-text-light dark:text-text-dark">Documents</h3>
 <div class="space-y-3">
-<button class="w-full text-sm font-semibold py-2 px-4 rounded bg-secondary text-white hover:bg-secondary/90 dark:bg-secondary/30 dark:hover:bg-primary/30 dark:text-text-dark transition-colors text-left">
-                      Téléverser une pièce d'identité
-                    </button>
-<button class="w-full text-sm font-semibold py-2 px-4 rounded bg-secondary text-white hover:bg-secondary/90 dark:bg-secondary/30 dark:hover:bg-primary/30 dark:text-text-dark transition-colors text-left">
-                      Téléverser un contrat de travail
-                    </button>
+<div class="p-3 bg-accent dark:bg-secondary/30 rounded-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">badge</span>
+<div>
+<p class="font-semibold text-sm text-text-light dark:text-text-dark">carte_identite.pdf</p>
+<p class="text-xs text-text-muted-light dark:text-text-muted-dark">Pièce d'identité</p>
+</div>
+</div>
+<div class="flex items-center gap-4 flex-shrink-0">
+<button @click="documentUrl = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'; modalOpen = true" class="text-sm font-semibold text-primary hover:underline">Voir</button>
+<a href="#" class="text-sm font-semibold text-primary hover:underline">Changer</a>
+</div>
+</div>
+</div>
+<div class="p-3 bg-accent dark:bg-secondary/30 rounded-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">description</span>
+<div>
+<p class="font-semibold text-sm text-text-light dark:text-text-dark">contrat_de_travail.pdf</p>
+<p class="text-xs text-text-muted-light dark:text-text-muted-dark">Contrat de travail</p>
+</div>
+</div>
+<div class="flex items-center gap-4 flex-shrink-0">
+<button @click="documentUrl = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'; modalOpen = true" class="text-sm font-semibold text-primary hover:underline">Voir</button>
+<a href="#" class="text-sm font-semibold text-primary hover:underline">Changer</a>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -93,10 +129,24 @@ include '../../templates/header.php';
 </div>
 <div class="pt-6 border-t border-accent dark:border-secondary/20 flex justify-end">
 <button class="bg-primary text-white font-bold font-display py-3 px-6 rounded-lg hover:opacity-90 transition-opacity shadow-soft" type="submit">
-                      Modifier ma formulaire
+                      Modifier mes informations
                     </button>
 </div>
 </form>
+</div>
+</div>
+<!-- Modal pour afficher le document -->
+<div x-show="modalOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+<div @click.away="modalOpen = false" class="bg-accent dark:bg-secondary/40 rounded-lg shadow-soft w-full max-w-4xl h-[90vh] m-4 flex flex-col" x-show="modalOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
+<div class="flex justify-between items-center p-4 border-b border-secondary/10 dark:border-secondary/30 flex-shrink-0">
+<h3 class="text-lg font-bold font-display text-text-light dark:text-text-dark">Aperçu du document</h3>
+<button @click="modalOpen = false" class="text-text-muted-light dark:text-text-muted-dark hover:text-text-light dark:hover:text-text-dark">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-4 flex-grow">
+<iframe :src="documentUrl" class="w-full h-full border-0 rounded-md bg-white"></iframe>
+</div>
 </div>
 </div>
 </main>

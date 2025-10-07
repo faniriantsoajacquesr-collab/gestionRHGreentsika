@@ -1,4 +1,9 @@
-<?php $activePage = isset($activePage) ? $activePage : ''; ?>
+<?php 
+$activePage = isset($activePage) ? $activePage : ''; 
+// Définit un état par défaut si la variable n'est pas définie sur la page appelante.
+// Un profil est considéré comme complet par défaut, sauf indication contraire.
+$isProfileComplete = isset($isProfileComplete) ? $isProfileComplete : true;
+?>
 <aside class="w-64 bg-secondary dark:bg-background-dark border-r border-accent dark:border-secondary/20 flex-shrink-0">
     <div class="flex items-center gap-3 h-16 px-6 border-b border-accent dark:border-secondary/20">
         <div class="text-primary">
@@ -17,13 +22,24 @@
             <span class="material-symbols-outlined">person</span>
             <span>Mon Profil</span>
         </a>
-        <a href="employe_pointage.php" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'pointage') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
-            <span class="material-symbols-outlined">timer</span>
-            <span>Pointage</span>
-        </a>
-        <a href="employe_absenceConges.php" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'conges') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
-            <span class="material-symbols-outlined">event_busy</span>
-            <span>Congés et absences</span>
-        </a>
+        <?php if ($isProfileComplete): ?>
+            <a href="employe_pointage.php" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'pointage') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
+                <span class="material-symbols-outlined">timer</span>
+                <span>Pointage</span>
+            </a>
+            <a href="employe_absenceConges.php" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'conges') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
+                <span class="material-symbols-outlined">event_busy</span>
+                <span>Congés et absences</span>
+            </a>
+        <?php else: ?>
+            <div class="flex items-center gap-3 px-4 py-2 rounded-lg text-gray-500 dark:text-gray-600 cursor-not-allowed" title="Veuillez compléter votre profil pour accéder à cette page">
+                <span class="material-symbols-outlined">timer</span>
+                <span>Pointage</span>
+            </div>
+            <div class="flex items-center gap-3 px-4 py-2 rounded-lg text-gray-500 dark:text-gray-600 cursor-not-allowed" title="Veuillez compléter votre profil pour accéder à cette page">
+                <span class="material-symbols-outlined">event_busy</span>
+                <span>Congés et absences</span>
+            </div>
+        <?php endif; ?>
     </nav>
 </aside>
