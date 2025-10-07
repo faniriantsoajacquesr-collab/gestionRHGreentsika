@@ -9,23 +9,23 @@
         <h1 class="text-xl font-display font-bold text-white dark:text-text-dark">Greentsika</h1>
     </div>
     <nav class="p-4 space-y-2">
-        <a href="manager_dashboard.php" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'dashboard') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
+        <a href="admin_dashboard.php" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'dashboard') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
             <span class="material-symbols-outlined">dashboard</span>
             <span>Tableau de bord</span>
         </a>
-        <a href="manager_equipe.php" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'equipe') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
+        <a href="admin_equipe.php" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'equipe') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
             <span class="material-symbols-outlined">groups</span>
-            <span>Équipe</span>
+            <span>Gestion Employés</span>
         </a>
-        <a href="manager_congesAbsence.php" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'conges') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
+        <a href="admin_congesAbsence.php" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'conges') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
             <span class="material-symbols-outlined">event_busy</span>
             <span>Demandes de congé</span>
         </a>
-        <a href="manager_pointage.php" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'pointage') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
+        <a href="admin_pointage.php" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'pointage') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
             <span class="material-symbols-outlined">timer</span>
             <span>Pointage</span>
         </a>
-        <a href="#" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'profil') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
+        <a href="admin_profile.php" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'profil') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
             <span class="material-symbols-outlined">person</span>
             <span>Mon Profil</span>
         </a>
