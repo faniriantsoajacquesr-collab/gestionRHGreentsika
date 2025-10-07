@@ -1,185 +1,148 @@
 <?php
-$pageTitle = "Greentsika HR Management - Pointage";
+$pageTitle = "Greentsika HR Management - Supervision Pointage";
 $activePage = "pointage";
 include '../../templates/header.php';
 ?>
-<?php include 'sidebar_manager.php'; ?>
+<?php include 'sidebar_admin.php'; ?>
 <div class="flex-1 flex flex-col">
 <header class="bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-10 border-b border-accent dark:border-secondary/20">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex items-center justify-between h-16">
-<h2 class="text-2xl font-bold font-display text-text-light dark:text-text-dark">Pointage &amp; Présence</h2>
+<h2 class="text-2xl font-bold font-display text-text-light dark:text-text-dark">Supervision du Pointage</h2>
 <div class="flex items-center gap-4">
 <button class="text-text-muted-light dark:text-text-muted-dark hover:text-text-light dark:hover:text-text-dark">
 <span class="material-symbols-outlined">notifications</span>
 </button>
-<div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBBEJg0aghtyYYbGJE6Jau-8Au9RfROclaYc0G7KvNZaCb95GVAkQiMkfe9Su2sGiUe9B78tjMSft4uuWYJ9rwFragzWSx9nzQN4MU24LmWvohh4o_TZ8HxNKP1yNDAD4QBU0tOi6tQELOVvvQocQo_mePE1gqUguHYKW21E4AOyixWB5IJ-s63ShJe1hCVEtsCpRD-iS5VuGpCW8RY1D1ItGn2ExfDbWBdT3iqRHSVOudNlIfvrAOZp8ljBUKbAxxZ7IQamP1-LCv2");'></div>
+<div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://i.pravatar.cc/150?u=admin");'></div>
 </div>
 </div>
 </div>
 </header>
-<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-<div class="lg:col-span-2">
-<div class="flex justify-between items-center mb-6">
-<div>
-<h3 class="text-xl font-bold font-display text-text-light dark:text-text-dark">Pointage de l'Équipe</h3>
-<p class="text-text-muted-light dark:text-text-muted-dark">Lundi 18 Mars 2024</p>
-</div>
-<div class="flex items-center gap-2">
-<input class="bg-accent dark:bg-secondary/20 border-secondary/20 dark:border-secondary/30 rounded-lg p-2 text-sm focus:ring-primary focus:border-primary" type="date" value="2024-03-18"/>
-<button class="bg-primary text-secondary font-bold py-2 px-4 rounded-lg flex items-center gap-2 hover:bg-primary/90 transition-colors shadow-soft">
-<span class="material-symbols-outlined">download</span>
-<span>Exporter</span>
-</button>
-</div>
-</div>
-<div class="bg-accent dark:bg-secondary/20 rounded-lg shadow-soft overflow-x-auto">
-<table class="w-full text-left">
-<thead class="border-b border-secondary/10 dark:border-secondary/30">
-<tr>
-<th class="p-4 font-semibold text-sm text-text-muted-light dark:text-text-muted-dark">Employé</th>
-<th class="p-4 font-semibold text-sm text-text-muted-light dark:text-text-muted-dark">Heure d'arrivée</th>
-<th class="p-4 font-semibold text-sm text-text-muted-light dark:text-text-muted-dark">Statut</th>
-<th class="p-4 font-semibold text-sm text-text-muted-light dark:text-text-muted-dark">Remarques</th>
-<th class="p-4 font-semibold text-sm text-text-muted-light dark:text-text-muted-dark">Actions</th>
-</tr>
-</thead>
-<tbody>
-<tr class="border-b border-accent dark:border-secondary/20">
-<td class="p-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBBEJg0aghtyYYbGJE6Jau-8Au9RfROclaYc0G7KvNZaCb95GVAkQiMkfe9Su2sGiUe9B78tjMSft4uuWYJ9rwFragzWSx9nzQN4MU24LmWvohh4o_TZ8HxNKP1yNDAD4QBU0tOi6tQELOVvvQocQo_mePE1gqUguHYKW21E4AOyixWB5IJ-s63ShJe1hCVEtsCpRD-iS5VuGpCW8RY1D1ItGn2ExfDbWBdT3iqRHSVOudNlIfvrAOZp8ljBUKbAxxZ7IQamP1-LCv2");'></div>
-<div>
-<p class="font-semibold text-text-light dark:text-text-dark">Jane Doe</p>
-<p class="text-xs text-text-muted-light dark:text-text-muted-dark">Développeuse</p>
-</div>
-</div>
-</td>
-<td class="p-4 text-sm font-semibold text-text-light dark:text-text-dark">08:02</td>
-<td class="p-4">
-<span class="status-badge status-present">
-<span class="material-symbols-outlined text-sm">check_circle</span>
-                                        Présent
-                                    </span>
-</td>
-<td class="p-4 text-sm text-text-muted-light dark:text-text-muted-dark italic">--</td>
-<td class="p-4">
-<button class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">edit_note</span></button>
-</td>
-</tr>
-<tr class="border-b border-accent dark:border-secondary/20">
-<td class="p-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4oyNck-cFxGq5OtFM2IbokILAKjAKmbJYCm-8pr3X047ObLK76yPK74y4mib5s8R7-uL7OfnEuc_A6W4r4df-GQ8x7W9_FSJuwht4uF1pDos8fj-235LRANFLC5Uog0twYVDZGSJ-EZRP3wzsf8NRpP8rCOePxr9h83onFeDD8pywL-ZQO9fB9tip4T7j0B4TtQKoiEtRznhetSvmLXLaVsEUxgji4FvsmVYSVWGubtl-C-WuZsLH7fQZeJmfCV71g8Wh9PonQei3");'></div>
-<div>
-<p class="font-semibold text-text-light dark:text-text-dark">Marc Dubois</p>
-<p class="text-xs text-text-muted-light dark:text-text-muted-dark">Designer</p>
-</div>
-</div>
-</td>
-<td class="p-4 text-sm font-semibold text-yellow-600 dark:text-yellow-400">08:17</td>
-<td class="p-4">
-<span class="status-badge status-late">
-<span class="material-symbols-outlined text-sm">schedule</span>
-                                        En retard
-                                    </span>
-</td>
-<td class="p-4 text-sm text-text-light dark:text-text-dark">Prévenu par SMS, transport en commun.</td>
-<td class="p-4">
-<button class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">edit_note</span></button>
-</td>
-</tr>
-<tr class="border-b border-accent dark:border-secondary/20">
-<td class="p-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4oyNck-cFxGq5OtFM2IbokILAKjAKmbJYCm-8pr3X047ObLK76yPK74y4mib5s8R7-uL7OfnEuc_A6W4r4df-GQ8x7W9_FSJuwht4uF1pDos8fj-235LRANFLC5Uog0twYVDZGSJ-EZRP3wzsf8NRpP8rCOePxr9h83onFeDD8pywL-ZQO9fB9tip4T7j0B4TtQKoiEtRznhetSvmLXLaVsEUxgji4FvsmVYSVWGubtl-C-WuZsLH7fQZeJmfCV71g8Wh9PonQei3");'></div>
-<div>
-<p class="font-semibold text-text-light dark:text-text-dark">Paul Martin</p>
-<p class="text-xs text-text-muted-light dark:text-text-muted-dark">Chef de projet</p>
-</div>
-</div>
-</td>
-<td class="p-4 text-sm font-semibold text-red-600 dark:text-red-400">--</td>
-<td class="p-4">
-<span class="status-badge status-absent">
-<span class="material-symbols-outlined text-sm">person_off</span>
-                                        Absent
-                                    </span>
-</td>
-<td class="p-4 text-sm text-text-light dark:text-text-dark">Jour de congé validé.</td>
-<td class="p-4">
-<button class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">edit_note</span></button>
-</td>
-</tr>
-<tr>
-<td class="p-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4oyNck-cFxGq5OtFM2IbokILAKjAKmbJYCm-8pr3X047ObLK76yPK74y4mib5s8R7-uL7OfnEuc_A6W4r4df-GQ8x7W9_FSJuwht4uF1pDos8fj-235LRANFLC5Uog0twYVDZGSJ-EZRP3wzsf8NRpP8rCOePxr9h83onFeDD8pywL-ZQO9fB9tip4T7j0B4TtQKoiEtRznhetSvmLXLaVsEUxgji4FvsmVYSVWGubtl-C-WuZsLH7fQZeJmfCV71g8Wh9PonQei3");'></div>
-<div>
-<p class="font-semibold text-text-light dark:text-text-dark">Alice Dupont</p>
-<p class="text-xs text-text-muted-light dark:text-text-muted-dark">Data Analyst</p>
-</div>
-</div>
-</td>
-<td class="p-4 text-sm font-semibold text-text-light dark:text-text-dark">07:55</td>
-<td class="p-4">
-<span class="status-badge status-present">
-<span class="material-symbols-outlined text-sm">check_circle</span>
-                                        Présent
-                                    </span>
-</td>
-<td class="p-4 text-sm text-text-muted-light dark:text-text-muted-dark italic">--</td>
-<td class="p-4">
-<button class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">edit_note</span></button>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="lg:col-span-1">
-<div class="bg-accent dark:bg-secondary/20 p-6 rounded-lg shadow-soft border-t-4 border-primary">
-<h3 class="text-xl font-bold font-display text-text-light dark:text-text-dark mb-4">Mon Pointage</h3>
-<div class="flex items-center justify-center gap-4 my-6">
-<button class="flex flex-col items-center justify-center w-32 h-32 rounded-full bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-800/70 transition-all duration-300 transform hover:scale-105 shadow-soft">
-<span class="material-symbols-outlined text-5xl">login</span>
-<span class="font-semibold mt-1">Check-in</span>
-</button>
-<button class="flex flex-col items-center justify-center w-32 h-32 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800/70 transition-all duration-300 transform hover:scale-105 shadow-soft">
-<span class="material-symbols-outlined text-5xl">logout</span>
-<span class="font-semibold mt-1">Check-out</span>
-</button>
-</div>
-<div class="mt-8">
-<h4 class="font-semibold text-text-light dark:text-text-dark mb-3">Mon Historique Récent</h4>
-<div class="space-y-3">
-<div class="flex justify-between items-center p-3 bg-background-light dark:bg-background-dark rounded-lg">
-<div>
-<p class="font-semibold">Vendredi 15 Mars</p>
-<p class="text-xs text-text-muted-light dark:text-text-muted-dark">08:05 - 17:02</p>
-</div>
-<p class="font-semibold text-sm text-text-muted-light dark:text-text-muted-dark">8h 57m</p>
-</div>
-<div class="flex justify-between items-center p-3 bg-background-light dark:bg-background-dark rounded-lg">
-<div>
-<p class="font-semibold">Jeudi 14 Mars</p>
-<p class="text-xs text-text-muted-light dark:text-text-muted-dark">07:58 - 17:10</p>
-</div>
-<p class="font-semibold text-sm text-text-muted-light dark:text-text-muted-dark">9h 12m</p>
-</div>
-<div class="flex justify-between items-center p-3 bg-background-light dark:bg-background-dark rounded-lg">
-<div>
-<p class="font-semibold">Mercredi 13 Mars</p>
-<p class="text-xs text-text-muted-light dark:text-text-muted-dark">08:15 - 17:00</p>
-</div>
-<p class="font-semibold text-sm text-text-muted-light dark:text-text-muted-dark">8h 45m</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8" x-data="{ dropdownOpen: false }">
+    <!-- Filtres -->
+    <div class="mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+            <div>
+                <label for="search_employee" class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Rechercher un employé</label>
+                <input type="text" id="search_employee" placeholder="Nom de l'employé..." class="mt-1 w-full bg-background-light dark:bg-background-dark border-secondary/20 rounded-md text-sm">
+            </div>
+            <div>
+                <label for="filter_department" class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Département</label>
+                <select id="filter_department" class="mt-1 w-full bg-background-light dark:bg-background-dark border-secondary/20 rounded-md text-sm">
+                    <option>Tous les départements</option>
+                    <option>Technologie</option>
+                    <option>Terrain</option>
+                    <option>Analyse</option>
+                </select>
+            </div>
+            <div>
+                <label for="filter_date" class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Date</label>
+                <input id="filter_date" class="mt-1 w-full bg-background-light dark:bg-background-dark border-secondary/20 rounded-md text-sm" type="date" value="2024-03-18"/>
+            </div>
+            <button class="bg-primary text-secondary font-bold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-soft">
+                <span class="material-symbols-outlined">filter_alt</span>
+                <span>Filtrer</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Tableau de supervision -->
+    <div class="bg-accent dark:bg-secondary/20 rounded-lg shadow-soft overflow-x-auto mb-8">
+        <table class="w-full text-left">
+            <thead class="border-b border-secondary/10 dark:border-secondary/30">
+                <tr>
+                    <th class="p-4 font-semibold text-sm text-text-muted-light dark:text-text-muted-dark">Employé</th>
+                    <th class="p-4 font-semibold text-sm text-text-muted-light dark:text-text-muted-dark">Heure d'arrivée</th>
+                    <th class="p-4 font-semibold text-sm text-text-muted-light dark:text-text-muted-dark">Heure de départ</th>
+                    <th class="p-4 font-semibold text-sm text-text-muted-light dark:text-text-muted-dark">Statut</th>
+                    <th class="p-4 font-semibold text-sm text-text-muted-light dark:text-text-muted-dark">Remarques</th>
+                    <th class="p-4 font-semibold text-sm text-text-muted-light dark:text-text-muted-dark text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Exemples de données -->
+                <tr class="border-b border-accent dark:border-secondary/20">
+                    <td class="p-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://i.pravatar.cc/150?u=jane");'></div>
+                            <div>
+                                <p class="font-semibold text-text-light dark:text-text-dark">Jane Doe</p>
+                                <p class="text-xs text-text-muted-light dark:text-text-muted-dark">Développeuse</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-4 text-sm font-semibold text-text-light dark:text-text-dark">08:02</td>
+                    <td class="p-4 text-sm font-semibold text-text-light dark:text-text-dark">17:05</td>
+                    <td class="p-4"><span class="status-badge status-present">Présent</span></td>
+                    <td class="p-4 text-sm text-text-muted-light dark:text-text-muted-dark italic">--</td>
+                    <td class="p-4 text-center"><button class="text-text-muted-light dark:text-text-muted-dark hover:text-primary p-1"><span class="material-symbols-outlined">edit_note</span></button></td>
+                </tr>
+                <tr class="border-b border-accent dark:border-secondary/20">
+                    <td class="p-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://i.pravatar.cc/150?u=marc");'></div>
+                            <div>
+                                <p class="font-semibold text-text-light dark:text-text-dark">Marc Dubois</p>
+                                <p class="text-xs text-text-muted-light dark:text-text-muted-dark">Vulgarisateur</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-4 text-sm font-semibold text-yellow-600 dark:text-yellow-400">08:17</td>
+                    <td class="p-4 text-sm font-semibold text-text-light dark:text-text-dark">17:01</td>
+                    <td class="p-4"><span class="status-badge status-late">En retard</span></td>
+                    <td class="p-4 text-sm text-text-light dark:text-text-dark">Transport en commun</td>
+                    <td class="p-4 text-center"><button class="text-text-muted-light dark:text-text-muted-dark hover:text-primary p-1"><span class="material-symbols-outlined">edit_note</span></button></td>
+                </tr>
+                <tr class="border-b border-accent dark:border-secondary/20">
+                    <td class="p-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://i.pravatar.cc/150?u=paul");'></div>
+                            <div>
+                                <p class="font-semibold text-text-light dark:text-text-dark">Paul Martin</p>
+                                <p class="text-xs text-text-muted-light dark:text-text-muted-dark">Chef de projet</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-4 text-sm font-semibold text-red-600 dark:text-red-400">--</td>
+                    <td class="p-4 text-sm font-semibold text-red-600 dark:text-red-400">--</td>
+                    <td class="p-4"><span class="status-badge status-absent">Absent</span></td>
+                    <td class="p-4 text-sm text-text-light dark:text-text-dark">Congé validé</td>
+                    <td class="p-4 text-center"><button class="text-text-muted-light dark:text-text-muted-dark hover:text-primary p-1"><span class="material-symbols-outlined">edit_note</span></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Rapports et Exports -->
+    <div class="bg-accent dark:bg-secondary/20 p-6 rounded-lg shadow-soft">
+        <h3 class="text-xl font-bold font-display text-text-light dark:text-text-dark mb-4">Rapports Mensuels & Exports</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+            <div>
+                <label for="report_month" class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Choisir un mois pour le rapport</label>
+                <input type="month" id="report_month" value="<?php echo date('Y-m'); ?>" class="mt-1 w-full bg-background-light dark:bg-background-dark border-secondary/20 rounded-md text-sm">
+                <div class="mt-4 flex flex-col sm:flex-row gap-2">
+                    <button class="flex-1 bg-primary/20 text-primary font-semibold py-2 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-primary/30 transition-colors">
+                        <span class="material-symbols-outlined">summarize</span>
+                        <span>Générer le rapport</span>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <p class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Exporter les données</p>
+                <div class="mt-1 relative" @click.away="dropdownOpen = false">
+                    <button @click="dropdownOpen = !dropdownOpen" class="w-full text-left bg-background-light dark:bg-background-dark border border-secondary/20 rounded-md text-sm p-2.5 flex justify-between items-center">
+                        <span>Choisir un format d'export...</span>
+                        <span class="material-symbols-outlined" x-text="dropdownOpen ? 'expand_less' : 'expand_more'"></span>
+                    </button>
+                    <div x-show="dropdownOpen" x-transition class="absolute w-full mt-1 bg-accent dark:bg-secondary/50 rounded-lg shadow-lg z-20">
+                        <a href="#" class="block px-4 py-2 text-sm text-text-light dark:text-text-dark hover:bg-primary/10">Exporter la vue quotidienne (CSV)</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-text-light dark:text-text-dark hover:bg-primary/10">Exporter le rapport mensuel (PDF)</a>
+                    </div>
+                </div>
+                <p class="text-xs text-text-muted-light dark:text-text-muted-dark mt-2">Le rapport mensuel inclut les retards cumulés, les absences et la présence moyenne par département.</p>
+            </div>
+        </div>
+    </div>
 </main>
 </div>
 <?php include '../../templates/footer.php'; ?>

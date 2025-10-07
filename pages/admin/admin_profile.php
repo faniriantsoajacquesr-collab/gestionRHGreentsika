@@ -4,7 +4,7 @@ $activePage = "profil";
 include '../../templates/header.php';
 ?>
 
-<?php include 'sidebar_manager.php'; ?>
+<?php include 'sidebar_admin.php'; ?>
 <div class="flex-1 flex flex-col">
 <header class="bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-10 border-b border-accent dark:border-secondary/20">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,25 +14,20 @@ include '../../templates/header.php';
 <button class="text-text-muted-light dark:text-text-muted-dark hover:text-text-light dark:hover:text-text-dark">
 <span class="material-symbols-outlined">notifications</span>
 </button>
-<div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBBEJg0aghtyYYbGJE6Jau-8Au9RfROclaYc0G7KvNZaCb95GVAkQiMkfe9Su2sGiUe9B78tjMSft4uuWYJ9rwFragzWSx9nzQN4MU24LmWvohh4o_TZ8HxNKP1yNDAD4QBU0tOi6tQELOVvvQocQo_mePE1gqUguHYKW21E4AOyixWB5IJ-s63ShJe1hCVEtsCpRD-iS5VuGpCW8RY1D1ItGn2ExfDbWBdT3iqRHSVOudNlIfvrAOZp8ljBUKbAxxZ7IQamP1-LCv2");'></div>
+<div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://i.pravatar.cc/150?u=admin");'></div>
 </div>
 </div>
 </div>
 </header>
-<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8" x-data="{ modalOpen: false, documentUrl: '' }">
 <div class="max-w-4xl mx-auto">
-<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-<div class="status-badge status-pending">
-<span>🟡</span> En attente
-            </div>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
 <div class="lg:col-span-1">
 <div class="space-y-6">
 <div>
 <h3 class="text-lg font-semibold font-display mb-2 text-text-light dark:text-text-dark">Photo de profil</h3>
 <div class="flex flex-col items-center space-y-4">
-<div class="w-40 h-40 rounded-full bg-accent dark:bg-secondary/30 flex items-center justify-center bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBBEJg0aghtyYYbGJE6Jau-8Au9RfROclaYc0G7KvNZaCb95GVAkQiMkfe9Su2sGiUe9B78tjMSft4uuWYJ9rwFragzWSx9nzQN4MU24LmWvohh4o_TZ8HxNKP1yNDAD4QBU0tOi6tQELOVvvQocQo_mePE1gqUguHYKW21E4AOyixWB5IJ-s63ShJe1hCVEtsCpRD-iS5VuGpCW8RY1D1ItGn2ExfDbWBdT3iqRHSVOudNlIfvrAOZp8ljBUKbAxxZ7IQamP1-LCv2");'>
+<div class="w-40 h-40 rounded-full bg-accent dark:bg-secondary/30 flex items-center justify-center bg-cover bg-center" style='background-image: url("https://i.pravatar.cc/150?u=admin");'>
 </div>
 <button class="w-full text-sm font-semibold py-2 px-4 rounded bg-secondary text-white hover:bg-secondary/90 dark:bg-secondary/30 dark:hover:bg-primary/30 dark:text-text-dark transition-colors">
                       Changer la photo
@@ -42,12 +37,21 @@ include '../../templates/header.php';
 <div>
 <h3 class="text-lg font-semibold font-display mb-2 text-text-light dark:text-text-dark">Documents</h3>
 <div class="space-y-3">
-<button class="w-full text-sm font-semibold py-2 px-4 rounded bg-secondary text-white hover:bg-secondary/90 dark:bg-secondary/30 dark:hover:bg-primary/30 dark:text-text-dark transition-colors text-left">
-                      Téléverser une pièce d'identité
-                    </button>
-<button class="w-full text-sm font-semibold py-2 px-4 rounded bg-secondary text-white hover:bg-secondary/90 dark:bg-secondary/30 dark:hover:bg-primary/30 dark:text-text-dark transition-colors text-left">
-                      Téléverser un contrat de travail
-                    </button>
+<div class="p-3 bg-accent dark:bg-secondary/30 rounded-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">badge</span>
+<div>
+<p class="font-semibold text-sm text-text-light dark:text-text-dark">carte_identite_admin.pdf</p>
+<p class="text-xs text-text-muted-light dark:text-text-muted-dark">Pièce d'identité</p>
+</div>
+</div>
+<div class="flex items-center gap-4 flex-shrink-0">
+<button @click="documentUrl = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'; modalOpen = true" class="text-sm font-semibold text-primary hover:underline">Voir</button>
+<a href="#" class="text-sm font-semibold text-primary hover:underline">Changer</a>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -100,6 +104,20 @@ include '../../templates/header.php';
                     </button>
 </div>
 </form>
+</div>
+</div>
+<!-- Modal pour afficher le document -->
+<div x-show="modalOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+<div @click.away="modalOpen = false" class="bg-accent dark:bg-secondary/40 rounded-lg shadow-soft w-full max-w-4xl h-[90vh] m-4 flex flex-col" x-show="modalOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
+<div class="flex justify-between items-center p-4 border-b border-secondary/10 dark:border-secondary/30 flex-shrink-0">
+<h3 class="text-lg font-bold font-display text-text-light dark:text-text-dark">Aperçu du document</h3>
+<button @click="modalOpen = false" class="text-text-muted-light dark:text-text-muted-dark hover:text-text-light dark:hover:text-text-dark">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-4 flex-grow">
+<iframe :src="documentUrl" class="w-full h-full border-0 rounded-md bg-white"></iframe>
+</div>
 </div>
 </div>
 </div>
