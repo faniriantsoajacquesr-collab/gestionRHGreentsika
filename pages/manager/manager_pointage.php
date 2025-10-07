@@ -139,7 +139,7 @@ include '../../templates/header.php';
 </div>
 </div>
 <div class="lg:col-span-1">
-<div class="bg-accent dark:bg-secondary/20 p-6 rounded-lg shadow-soft">
+<div class="bg-accent dark:bg-secondary/20 p-6 rounded-lg shadow-soft border-t-4 border-primary">
 <h3 class="text-xl font-bold font-display text-text-light dark:text-text-dark mb-4">Mon Pointage</h3>
 <div class="flex items-center justify-center gap-4 my-6">
 <button class="flex flex-col items-center justify-center w-32 h-32 rounded-full bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-800/70 transition-all duration-300 transform hover:scale-105 shadow-soft">

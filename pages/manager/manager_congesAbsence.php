@@ -134,7 +134,7 @@ include '../../templates/header.php';
 </div>
 </div>
 <div class="lg:col-span-1">
-<div class="bg-accent dark:bg-secondary/20 p-6 rounded-lg shadow-soft sticky top-24">
+<div class="bg-accent dark:bg-secondary/20 p-6 rounded-lg shadow-soft sticky top-24 border-t-4 border-primary">
 <h3 class="text-xl font-bold font-display text-text-light dark:text-text-dark mb-4">Soldes de Congés</h3>
 <div class="space-y-4">
 <div class="p-4 bg-background-light dark:bg-background-dark rounded-lg">

@@ -42,7 +42,7 @@ include '../../templates/header.php';
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <!-- Cartes de résumé -->
-                <div class="bg-accent dark:bg-secondary/20 p-6 rounded-lg shadow-soft flex items-center gap-4">
+                <div class="bg-accent dark:bg-secondary/20 p-6 rounded-lg shadow-soft flex items-center gap-4 border-t-4 border-primary">
                     <div class="bg-primary/20 text-primary p-3 rounded-full">
                         <span class="material-symbols-outlined text-3xl">event_available</span>
                     </div>
@@ -51,7 +51,7 @@ include '../../templates/header.php';
                         <p class="text-2xl font-bold font-display text-text-light dark:text-text-dark">15 jours</p>
                     </div>
                 </div>
-                <div class="bg-accent dark:bg-secondary/20 p-6 rounded-lg shadow-soft flex items-center gap-4">
+                <div class="bg-accent dark:bg-secondary/20 p-6 rounded-lg shadow-soft flex items-center gap-4 border-t-4 border-red-500">
                     <div class="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 p-3 rounded-full">
                         <span class="material-symbols-outlined text-3xl">pending_actions</span>
                     </div>
@@ -60,7 +60,7 @@ include '../../templates/header.php';
                         <p class="text-2xl font-bold font-display text-text-light dark:text-text-dark">1</p>
                     </div>
                 </div>
-                <div class="bg-accent dark:bg-secondary/20 p-6 rounded-lg shadow-soft flex items-center gap-4">
+                <div class="bg-accent dark:bg-secondary/20 p-6 rounded-lg shadow-soft flex items-center gap-4 border-t-4 border-primary">
                     <div class="bg-primary/20 text-primary p-3 rounded-full">
                         <span class="material-symbols-outlined text-3xl">timer</span>
                     </div>
