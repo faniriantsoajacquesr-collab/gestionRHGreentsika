@@ -6,7 +6,7 @@ include '../../templates/header.php';
 <?php include 'sidebar_manager.php'; ?>
 <div class="flex-1 flex flex-col">
 <header class="bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-10 border-b border-accent dark:border-secondary/20">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="container mx-@auto px-4 sm:px-6 lg:px-8">
 <div class="flex items-center justify-between h-16">
 <h2 class="text-2xl font-bold font-display text-text-light dark:text-text-dark">Congés &amp; Absences</h2>
 <div class="flex items-center gap-4">
