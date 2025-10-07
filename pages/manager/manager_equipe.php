@@ -1,7 +1,7 @@
 <?php
 $pageTitle = "Greentsika HR Management - Mon Équipe";
 $activePage = "equipe";
-include '../templates/header.php';
+include '../../templates/header.php';
 ?>
 <?php include 'sidebar_manager.php'; ?>
 <div class="flex-1 flex flex-col">
@@ -142,4 +142,4 @@ include '../templates/header.php';
 </div>
 </main>
 </div>
-<?php include '../templates/footer.php'; ?>
+<?php include '../../templates/footer.php'; ?>

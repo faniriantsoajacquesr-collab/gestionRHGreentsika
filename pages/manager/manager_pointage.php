@@ -1,7 +1,6 @@
 <?php
 $pageTitle = "Greentsika HR Management - Pointage";
 $activePage = "pointage";
-include '../templates/header.php';
 include '../../templates/header.php';
 ?>
 <?php include 'sidebar_manager.php'; ?>
@@ -183,5 +182,4 @@ include '../../templates/header.php';
 </div>
 </main>
 </div>
-<?php include '../templates/footer.php'; ?>
 <?php include '../../templates/footer.php'; ?>
