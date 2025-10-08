@@ -20,7 +20,7 @@
             <span class="material-symbols-outlined">timer</span>
             <span>Pointage</span>
         </a>
-        <a href="#" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'profil') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
+        <a href="manager_profile.php" class="flex items-center gap-3 px-4 py-2 rounded-lg <?php echo ($activePage === 'profil') ? 'text-white dark:text-text-dark bg-primary/20 font-semibold' : 'text-gray-300 dark:text-text-muted-dark hover:bg-primary/20 hover:text-white'; ?> transition-colors">
             <span class="material-symbols-outlined">person</span>
             <span>Mon Profil</span>
         </a>
